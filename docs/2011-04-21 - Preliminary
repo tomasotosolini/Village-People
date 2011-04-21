@@ -1,0 +1,25 @@
+Web meeting - 21 Apr 2001
+
+Goals -------------------------------------------------------------
+
+1. Produce "Vision Document" 
+
+
+Results -------------------------------------------------------------
+
+  Vision Document
+====================
+
+1. High level project goals/use cases
+= = = = = = = = = = = = = = = = = = = 
+
+2. High level architecture
+= = = = = = = = = = = = = = 
+
+Service oriented architecture. The components must be organized into independent modules. It is foreseen that the client access is multi-protocol. Also the se
+
+
+3. Project risks overview
+= = = = = = = = = = = = = 
+
+
