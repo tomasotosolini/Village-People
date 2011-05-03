@@ -1,0 +1,58 @@
+Web meeting - 28 Apr 2001
+--------------------------------------------------------------------------------
+
+ Results
+= = = = =
+
+1. More detailed specification of system archetecture 
+
+ - It appears reasonable to choose a component based development model because
+of the intended modular structure of the software parts involved in to system.
+Moreover the component modelling encourages the separation of the various parts
+of the structure and leads to a service oriented design, potentially remote
+services.
+ - At least in a first implementation, the clients will be gui clients (thick)
+
+
+2. Use case refinement
+
+  - People Life
+  Actors: Simulation, Person, Time
+    Simulation creates Person then Person lives and after some time the
+    Simulation destroys the Person
+   
+  - People Id Registry (PIR) Enquiry
+  Actory: People Id Registry, other System's Entity
+    A System's Entity enquiries the PIR to obtain information about
+    some other System's Entity. The PIR will then supply the requested
+    information  if available. 
+
+  - People Id Registry (PIR) Birth Registration
+  Actory: People Id Registry, Simulation, Person
+    Once the Simulation creates a new Person, it also asks to PIR to register
+    the birth event 
+
+  - People Id Registry (PIR) Death Registration
+  Actory: People Id Registry, Simulation, Person
+    Once the Simulation destroy a new Person, it also asks to PIR to register
+    the death event 
+
+  - Hospital (H) Request
+  Actory: Person, Hospital
+    A Person goes to the Hospital, and after some time exits in three
+    possible states: healed, not healed, death.
+
+  - Bank (B) Fund Request
+  Actory: Person, Bank
+    A Person goes to the Bank and obtains some fund.
+
+  - Bank (B) Fund Depot
+  Actory: Person, Bank
+    A Person goes to the Bank and depots some fund.
+
+3. Next web meeting is scheduled on 05 May 2011 08:00PM. 
+   Arguments:
+     - Elaboration - detailed description of the system's architecture
+     - Initial implementation of core features (Time Simulation 
+       Module, People Model, People Id Registry Module)
+   Things to be adjusted before next meeting: a decent VCS (namely git) 
