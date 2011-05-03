@@ -10,23 +10,36 @@ The system will simulate the life of a town. It will simulate the People living
 in the town and the Services they interact with in everyday life. The core
 services will be: 
 
-  - People Id Registry
-  - Hospital
-  - Bank
+  - People Id Registry (PIR)
+  - Hospital (H)
+  - Bank (B)
   - People's Life Course Simulation
 
 The system will simulate the time passing by.
-  
+
+System core use cases:
+
+- Time passing
+Actors: Time, time affected entity.
+Time will tick and every affected entity is informed about the current simulated
+universal time.
+
+- Resources
+Actors: Resource, consumer
+The consumer asks for a specific amount form the resource, the resource is
+consumed. 
+
 
 2. High level architecture
 = = = = = = = = = = = = = = 
 
 Service oriented architecture. The components must be organized into independent
 modules. It is foreseen that the client access is multi-protocol. Also the
-service will be able to exchange message in a client-server mode.
+services will be able to exchange message in a client-server mode.
 
 
 3. Project risks overview
 = = = = = = = = = = = = = 
 
-[TODO]
+Divert the development focus from developing a simulation to develop the
+simulated entity.
