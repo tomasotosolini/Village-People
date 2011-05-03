@@ -6,8 +6,8 @@
 1. High level project goals/use cases
 = = = = = = = = = = = = = = = = = = = 
 
-The system will simulate the life of a town. It will simulate the People living
-in the town and the Services they interact with in everyday life. The core
+The system will simulate life in a town. It will simulate people living
+in a town and services they interact with in everyday life. Core
 services will be: 
 
   - People Id Registry (PIR)
@@ -15,7 +15,7 @@ services will be:
   - Bank (B)
   - People's Life Course Simulation
 
-The system will simulate the time passing by.
+The system will simulate time passing by.
 
 System core use cases:
 
