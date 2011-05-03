@@ -1,0 +1,84 @@
+\subsection{High level project goals} 
+The system will simulate life in a town. It will simulate people living in a town and services they interact with in everyday life. 
+
+\subsection{Core services} 
+\begin{enumerate}
+\item People Id Registry (PIR)
+\item Hospital (H)
+\item Bank (B)
+\item People's Life Course Simulation
+\end{enumerate}
+The system will simulate time passing by.
+
+\subsection{System core use cases}
+\begin{itemize}
+  \item \textbf{Time passing}  
+	
+	- Actors: Time, time affected entity
+
+	- Time will tick and every affected entity is informed about the current simulated universal time
+
+  \item \textbf{Resources}
+
+	- Actors: Resource, Consumer
+
+	- The consumer asks for a specific amount form the resource, the resource is consumed
+
+  \item \textbf{People Life} 
+
+	- Actors: Simulation, Person, Time
+
+	- Simulation creates Person then Person lives and after some time the Simulation destroys the Person
+
+  \item \textbf{People Id Registry (PIR) Enquiry}
+
+	- Actors: People Id Registry, other System's Entity
+
+	- A System's Entity enquiries the PIR to obtain information about some other System's Entity. The PIR will then supply the requested information  if available
+
+  \item \textbf{People Id Registry (PIR) Birth Registration}
+
+	- Actors: People Id Registry, Simulation, Person
+
+	- Once the Simulation creates a new Person, it also asks to PIR to register the birth event
+
+  \item \textbf{People Id Registry (PIR) Death Registration}
+
+	- Actors: People Id Registry, Simulation, Person
+
+	- Once the Simulation destroy a new Person, it also asks to PIR to register the death event
+
+  \item \textbf{Hospital (H) Request}
+
+	- Actors: Person, Hospital
+
+	- A Person goes to the Hospital, and after some time exits in three possible states: healed, not healed, death
+
+  \item \textbf{Bank (B) Fund Request}
+
+	- Actors: Person, Bank
+
+	- A Person goes to the Bank and obtains some fund
+
+  \item \textbf{Bank (B) Fund Depot}
+
+	- Actors: Person, Bank
+
+	- A Person goes to the Bank and depots some fund
+\end{itemize}
+
+
+\subsection{High level architecture}
+Service oriented architecture. The components must be organized into independent
+modules. It is foreseen that the client access is multi-protocol. Also the
+services will be able to exchange message in a client-server mode.
+
+It appears reasonable to choose a component based development model because
+of the intended modular structure of the software parts involved in to system.
+Moreover the component modelling encourages the separation of the various parts
+of the structure and leads to a service oriented design, potentially remote
+services.
+
+\subsection{Project risks overview}
+Divert the development focus from developing a simulation to develop the
+simulated entity.

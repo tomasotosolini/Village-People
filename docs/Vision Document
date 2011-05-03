@@ -19,49 +19,44 @@ The system will simulate time passing by.
 
 System core use cases:
 
-  - Time passing
-  Actors: Time, time affected entity.
+  - Time passing - Actors: Time, time affected entity.
     Time will tick and every affected entity is informed about the current
-    simulateduniversal time.
+    simulated universal time.
 
-  - Resources
-  Actors: Resource, consumer
+  - Resources (Actors: Resource, Consumer)
     The consumer asks for a specific amount form the resource, the resource 
     is consumed. 
 
-  - People Life
-  Actors: Simulation, Person, Time
+  - People Life (Actors: Simulation, Person, Time)
     Simulation creates Person then Person lives and after some time the
     Simulation destroys the Person
    
-  - People Id Registry (PIR) Enquiry
-  Actory: People Id Registry, other System's Entity
+  - People Id Registry (PIR) Enquiry (Actors: People Id Registry, other
+    System's Entity)
     A System's Entity enquiries the PIR to obtain information about
     some other System's Entity. The PIR will then supply the requested
     information  if available. 
 
-  - People Id Registry (PIR) Birth Registration
-  Actory: People Id Registry, Simulation, Person
+  - People Id Registry (PIR) Birth Registration (Actors: People Id Registry,
+    Simulation, Person)
     Once the Simulation creates a new Person, it also asks to PIR to register
     the birth event 
 
-  - People Id Registry (PIR) Death Registration
-  Actory: People Id Registry, Simulation, Person
+  - People Id Registry (PIR) Death Registration (Actors: People Id Registry,
+    Simulation, Person)
     Once the Simulation destroy a new Person, it also asks to PIR to register
     the death event 
 
-  - Hospital (H) Request
-  Actory: Person, Hospital
+  - Hospital (H) Request (Actors: Person, Hospital)
     A Person goes to the Hospital, and after some time exits in three
     possible states: healed, not healed, death.
 
-  - Bank (B) Fund Request
-  Actory: Person, Bank
+  - Bank (B) Fund Request (Actors: Person, Bank)
     A Person goes to the Bank and obtains some fund.
 
-  - Bank (B) Fund Depot
-  Actory: Person, Bank
+  - Bank (B) Fund Depot (Actors: Person, Bank)
     A Person goes to the Bank and depots some fund.
+
 
 2. High level architecture
 = = = = = = = = = = = = = = 
@@ -75,6 +70,7 @@ of the intended modular structure of the software parts involved in to system.
 Moreover the component modelling encourages the separation of the various parts
 of the structure and leads to a service oriented design, potentially remote
 services.
+
 
 3. Project risks overview
 = = = = = = = = = = = = = 
