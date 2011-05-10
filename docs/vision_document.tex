@@ -1,6 +1,6 @@
 \subsection{High level project goals} 
 The system will simulate life in a town. It will simulate people living in a town and services they interact with in everyday life. 
-The system will simulate time passing by.
+The system will simulate time passing by. A simulated Environment (SIM) will provide the entities with access to resources, will schedule events in both predicatble and random way.
 
 \subsection{Core Services} 
 \begin{enumerate}
@@ -40,6 +40,12 @@ The system will simulate time passing by.
 	- Actors: Time, time affected entity
 
 	- Time will tick and every affected entity is informed about the current simulated universal time
+
+  \item \textbf{Simulated Environment}
+
+	- Actors: Simulated Environment, Entities
+
+	- As a time affected entity, Simulated Environment will update its status and the status of its resources and regulate access to them. Moreover it will also trigger both scheduled and random events.
 
   \item \textbf{Resources}
 

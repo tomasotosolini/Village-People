@@ -1,0 +1,14 @@
+\subsection{Time Resource (TCR)} 
+Is a process containing a list of time affected entites. At regular time intervals each time affected entity is informed abut current time by means of adedicated messge.
+
+To support the implement this feature time affected entities are require to implement the interface TimeAffected\footnote{In a second stage implementation this method will become asynchronous...} described hereafter
+
+\begin{verbatim}
+
+interface TimeAffected {
+
+   void Tick(Time: TDate);
+
+}
+
+\end{verbatim}

@@ -1,15 +1,36 @@
 \documentclass[a4paper,10pt]{book}
-\title{Village People}
+
+\usepackage[latin1]{inputenc}
+\usepackage{fontenc}
+\usepackage{graphicx}
+\usepackage{makeidx}
+
+\date{6/5/2011}
+\author{Michele Braidotti \& Tomaso Tosolini}
+
+\title{Simulated Village People}
+
+\makeindex
+
 
 \begin{document}
+
 \maketitle
+
+\tableofcontents
+
 \part{Overview}
 	\section{Vision Document}
     		\input{vision_document.tex}
 	\section{Architecture Document}
 		\input{architecture_document.tex}
+\part{Use Cases}
+	\input{use_cases.tex}
 \part{Implementation}
 	\section{Development Methodologies}
 		\input{development_methodologies.tex}
-
+	\section{Components}
+		\input{components.tex}
 \end{document}
+
+
