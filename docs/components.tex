@@ -1,14 +1,32 @@
 \subsection{Time Resource (TCR)} 
-Is a process containing a list of time affected entites. At regular time intervals each time affected entity is informed abut current time by means of adedicated messge.
+The resource architecture is the implemented using the observer pattern.
 
-To support the implement this feature time affected entities are require to implement the interface TimeAffected\footnote{In a second stage implementation this method will become asynchronous...} described hereafter
+TCR is the \textbf{Subject} process. At regular time intervals each time affected entity (\textbf{Observers}) is notified abuot current time by means of a dedicated messge.
+
+To support this feature time affected entities must implement the interface TimeAffected\footnote{
+In a more refined implementation this method will become asynchronous..<<.
+} described hereafter
 
 \begin{verbatim}
+interface TimeAffected_Observer {
 
-interface TimeAffected {
-
-   void Tick(Time: TDate);
+   public void sync(Time: Date);
 
 }
-
 \end{verbatim}
+
+To be informed about time passing by, TAE will register/unregister themselves by TCR using the following interface:
+
+\begin{verbatim}
+interface TimeResource {
+
+   public register(TimeAffected tae) /*throws TimeResourceException*/;
+   public unegister(TimeAffected tae) /*throws TimeResourceException*/;
+   public void notify();
+
+}
+\end{verbatim}
+
+Once registered by TCR, TAE will immediately starts being fed with periodic time passing messages (sync).
+
+To allow variable time simulation speed TCR implements
