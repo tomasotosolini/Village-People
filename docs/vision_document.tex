@@ -1,6 +1,10 @@
 \subsection{High level project goals} 
 The system will simulate life in a town. It will simulate people living in a town and services they interact with in everyday life. 
-The system will simulate time passing by. A simulated Environment (SIM) will provide the entities with access to resources, will schedule events in both predicatble and random way.
+The system will simulate time passing by. A Simulated Environment (SIM) will provide the entities with access to resources, will schedule events in both predictable and random way.
+The entities involved in the simulation (like people and simulated services) will interact with the Simulated Environment both actively and passively. 
+In the active interaction the entity will affect the simulated environment in some way (for example consuming a resource). 
+In the passive interaction the entity will be affected by a simulated environment decision (for example an entity destruction action).
+Simulated Entities will interact between themselves independently from the simulated environment. The interaction will happen in the following way: <TODO>
 
 \subsection{Core Services} 
 \begin{enumerate}
@@ -35,23 +39,23 @@ The system will simulate time passing by. A simulated Environment (SIM) will pro
 
 \subsection{System core use cases}
 \begin{itemize}
-  \item \textbf{Time passing}  
+  \item \textbf{Time passing Cycle}  
 	
 	- Actors: Time, time affected entity
 
-	- Time will tick and every affected entity is informed about the current simulated universal time
+	- Time will tick and every affected entity is informed about the current simulated universal time.
 
-  \item \textbf{Simulated Environment}
+  \item \textbf{Simulated Environment Cycle}
 
 	- Actors: Simulated Environment, Entities
 
-	- As a time affected entity, Simulated Environment will update its status and the status of its resources and regulate access to them. Moreover it will also trigger both scheduled and random events.
+	- As a time affected entity, Simulated Environment will update its status and regulate access to resources. It will also trigger both scheduled and random events.
 
-  \item \textbf{Resources}
+  \item \textbf{Resource Usage}
 
 	- Actors: Resource, Consumer
 
-	- The consumer asks for a specific amount form the resource, the resource is consumed
+	- The consumer asks the Simulated Environment for a specific amount of a specific resource, the amount is either granted or a 'no more available' message is sent back to the consumer.
 
   \item \textbf{People Life} 
 
