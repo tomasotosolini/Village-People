@@ -1,10 +1,13 @@
 \subsection{High level project goals} 
 The system will simulate life in a town. It will simulate people living in a town and services they interact with in everyday life. 
-The system will simulate time passing by. A Simulated Environment (SIM) will provide the entities with access to resources, will schedule events in both predictable and random way.
-The entities involved in the simulation (like people and simulated services) will interact with the Simulated Environment both actively and passively. 
+To archive this goal the system will simulate time passing by and a Simulated Environment (SIM) to provide the entities with access to resources, 
+and to schedule events in both predictable and random way.
+The entities involved in the simulation (like simulated people and simulated services) will interact with the Simulated Environment both actively and passively. 
 In the active interaction the entity will affect the simulated environment in some way (for example consuming a resource). 
 In the passive interaction the entity will be affected by a simulated environment decision (for example an entity destruction action).
-Simulated Entities will interact between themselves independently from the simulated environment. The interaction will happen in the following way: <TODO>
+Simulated Entities will interact between themselves independently from the Simulated Environment. The interaction will be initiated by the communication coordinator
+which decides who will be part of it and its purpose. The interaction will then continue independently from the communication coordinator and the outcome will only depend on 
+its participants.
 
 \subsection{Core Services} 
 \begin{enumerate}
