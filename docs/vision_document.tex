@@ -1,31 +1,45 @@
 \subsection{High level project goals} 
-The system will simulate life in a town. It will simulate people living in a town and services they interact with in everyday life. 
-To archive this goal the system will simulate time passing by and a Simulated Environment (SIM) to provide the entities with access to resources, 
-and to schedule events in both predictable and random way.
-The entities involved in the simulation (like simulated people and simulated services) will interact with the Simulated Environment both actively and passively. 
-In the active interaction the entity will affect the simulated environment in some way (for example consuming a resource). 
-In the passive interaction the entity will be affected by a simulated environment decision (for example an entity destruction action).
-Simulated Entities will interact between themselves independently from the Simulated Environment. The interaction will be initiated by the communication coordinator
-which decides who will be part of it and its purpose. The interaction will then continue independently from the communication coordinator and the outcome will only depend on 
-its participants.
-
-\subsection{Core Services} 
-\begin{enumerate}
-\item People Id Registry (PIRS)
-\item Hospital (HS)
-\item Bank (BS)
-\end{enumerate}
+The system will simulate life in a town. It will simulate people living in a
+town and services they interact with in everyday life. 
+To achieve this goal the system will simulate time passing by and a Simulated
+Environment (SIM) to provide the entities with access to resources, and to
+schedule events in both predictable and random way.
+The entities involved in the simulation (like simulated people and simulated
+services) will interact with the Simulated Environment both actively and
+passively. 
+In the active interaction the entity will affect the simulated environment in
+some way (for example consuming a resource). 
+In the passive interaction the entity will be affected by a simulated
+environment decision (for example an entity destruction action).
+Simulated Entities will interact between themselves independently from the
+Simulated Environment. The interaction will be initiated by the Communication
+Coordinator which decides who will be part of it and its purpose. The
+interaction will then continue independently from the Communication Coordinator
+and the outcome will only depend on its participants. 
 
 \subsection{Core Resources} 
 \begin{enumerate}
 \item Simulation Resource (SCR)
 \item Time Resource (TCR)
+\item Communication Coordinator (CCR)
 \end{enumerate}
 
-\subsection{Core Entities} 
+\subsection{Core Simulation Entities} 
+\begin{enumerate}
+\item Entity Interaction (EI)
+\end{enumerate}
+
+\subsection{Core Simulated Entities} 
 \begin{enumerate}
 \item People (PCE)
 \item Houses (HCE)
+\end{enumerate}
+
+\subsection{Core Simulated Services} 
+\begin{enumerate}
+\item People Id Registry (PIRS)
+\item Hospital (HS)
+\item Bank (BS)
 \end{enumerate}
 
 \subsection{Consumables} 
@@ -46,7 +60,8 @@ its participants.
 	
 	- Actors: Time, Time Affected Entity\footnote{formerly TAE}
 
-	- Time will tick and every affected entity is informed about the current simulated universal time.
+	- Time will tick and every affected entity is informed about the current
+simulated universal time.
 
   \item \textbf{Simulated Environment Cycle}
 
@@ -60,37 +75,45 @@ them. Moreover it will also trigger both scheduled and random events.
 
 	- Actors: Resource, Consumer
 
-	- The consumer asks the Simulated Environment for a specific amount of a specific resource, the amount is either granted or a 'no more available' message is sent back to the consumer.
+	- The consumer asks the Simulated Environment for a specific amount of a
+specific resource, the amount is either granted or a 'no more available' message
+is sent back to the consumer.
 
   \item \textbf{People Life} 
 
 	- Actors: Simulation, Person, Time
 
-	- Simulation creates Person then Person lives and after some time the Simulation destroys the Person
+	- Simulation creates Person then Person lives and after some time the
+Simulation destroys the Person
 
   \item \textbf{People Id Registry (PIR) Enquiry}
 
 	- Actors: People Id Registry, other System's Entity
 
-	- A System's Entity enquiries the PIR to obtain information about some other System's Entity. The PIR will then supply the requested information  if available
+	- A System's Entity enquiries the PIR to obtain information about some
+other System's Entity. The PIR will then supply the requested information  if
+available
 
   \item \textbf{People Id Registry (PIR) Birth Registration}
 
 	- Actors: People Id Registry, Simulation, Person
 
-	- Once the Simulation creates a new Person, it also asks to PIR to register the birth event
+	- Once the Simulation creates a new Person, it also asks to PIR to
+register the birth event
 
   \item \textbf{People Id Registry (PIR) Death Registration}
 
 	- Actors: People Id Registry, Simulation, Person
 
-	- Once the Simulation destroy a new Person, it also asks to PIR to register the death event
+	- Once the Simulation destroy a new Person, it also asks to PIR to
+register the death event
 
   \item \textbf{Hospital (H) Request}
 
 	- Actors: Person, Hospital
 
-	- A Person goes to the Hospital, and after some time exits in three possible states: healed, not healed, death
+	- A Person goes to the Hospital, and after some time exits in three
+possible states: healed, not healed, death
 
   \item \textbf{Bank (B) Fund Request}
 
