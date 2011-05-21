@@ -1,6 +1,13 @@
 \subsection{High level project goals} 
 The system will simulate life in a town. It will simulate people living in a town and services they interact with in everyday life. 
-The system will simulate time passing by. A simulated Environment (SIM) will provide the entities with access to resources, will schedule events in both predicatble and random way.
+To archive this goal the system will simulate time passing by and a Simulated Environment (SIM) to provide the entities with access to resources, 
+and to schedule events in both predictable and random way.
+The entities involved in the simulation (like simulated people and simulated services) will interact with the Simulated Environment both actively and passively. 
+In the active interaction the entity will affect the simulated environment in some way (for example consuming a resource). 
+In the passive interaction the entity will be affected by a simulated environment decision (for example an entity destruction action).
+Simulated Entities will interact between themselves independently from the Simulated Environment. The interaction will be initiated by the communication coordinator
+which decides who will be part of it and its purpose. The interaction will then continue independently from the communication coordinator and the outcome will only depend on 
+its participants.
 
 \subsection{Core Services} 
 \begin{enumerate}
@@ -35,13 +42,13 @@ The system will simulate time passing by. A simulated Environment (SIM) will pro
 
 \subsection{System core use cases}
 \begin{itemize}
-  \item \textbf{Time passing}  
+  \item \textbf{Time passing Cycle}  
 	
 	- Actors: Time, Time Affected Entity\footnote{formerly TAE}
 
-	- Time will tick and every affected entity is informed about the current simulated universal time
+	- Time will tick and every affected entity is informed about the current simulated universal time.
 
-  \item \textbf{Simulated Environment}
+  \item \textbf{Simulated Environment Cycle}
 
 	- Actors: Simulated Environment, Entities
 
@@ -49,11 +56,11 @@ The system will simulate time passing by. A simulated Environment (SIM) will pro
 status and the status of its simulated resources(SR) and regulate access to
 them. Moreover it will also trigger both scheduled and random events.
 
-  \item \textbf{Resources}
+  \item \textbf{Resource Usage}
 
 	- Actors: Resource, Consumer
 
-	- The consumer asks for a specific amount form the resource, the resource is consumed
+	- The consumer asks the Simulated Environment for a specific amount of a specific resource, the amount is either granted or a 'no more available' message is sent back to the consumer.
 
   \item \textbf{People Life} 
 
