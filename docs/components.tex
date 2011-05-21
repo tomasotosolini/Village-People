@@ -1,32 +1,60 @@
 \subsection{Time Resource (TCR)} 
-The resource architecture is the implemented using the observer pattern.
 
-TCR is the \textbf{Subject} process. At regular time intervals each time affected entity (\textbf{Observers}) is notified abuot current time by means of a dedicated messge.
+The resource architecture is the implemented using the Observer Pattern.
 
-To support this feature time affected entities must implement the interface TimeAffected\footnote{
-In a more refined implementation this method will become asynchronous..<<.
-} described hereafter
+TCR is the \textbf{Observable} process. At regular time intervals each
+\textbf{Observer} time affected entity is notified about current time.
+
+Once registered by TCR, TAE immediately starts being fed with periodic time
+passing messages.
+
+To allow variable time simulation speed, TCR implements a method to increment
+the speed of time increase. For simplicity and to stimulate implementation of
+statistic event triggering, absolute time distance between calls to
+notifyObservers() calls will always be fixed, and regulated by some internal
+thread. The time passed will increase more or less depending on current sim
+speed.
+
+Simulation speed must also be changeable dynamically.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Simulation Resource (SCR)} 
+
+Holds a status and a set of simulated resources(SR). Is a time affetected
+resource.
+
+Access to simulated resources is done with the following interface
 
 \begin{verbatim}
-interface TimeAffected_Observer {
-
-   public void sync(Time: Date);
+public interface SimulatedResourceAccess {
+	
+	Object request(String: resource_name, Object request); 
 
 }
 \end{verbatim}
 
-To be informed about time passing by, TAE will register/unregister themselves by TCR using the following interface:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Simulated Resource (SR)} 
+
+Is represented by the following interface:
 
 \begin{verbatim}
-interface TimeResource {
-
-   public register(TimeAffected tae) /*throws TimeResourceException*/;
-   public unegister(TimeAffected tae) /*throws TimeResourceException*/;
-   public void notify();
+public interface SimulatedResource {
+	
+	Double getAmount();
 
 }
 \end{verbatim}
 
-Once registered by TCR, TAE will immediately starts being fed with periodic time passing messages (sync).
+Currently there are two simulated resources:
 
-To allow variable time simulation speed TCR implements
+\begin{enumerate}
+  \item Fuel (FUC)
+  \item Food (FOC)
+\end{enumerate}

@@ -9,7 +9,7 @@ The system will simulate time passing by. A simulated Environment (SIM) will pro
 \item Bank (BS)
 \end{enumerate}
 
-\subsection{Core Resource} 
+\subsection{Core Resources} 
 \begin{enumerate}
 \item Simulation Resource (SCR)
 \item Time Resource (TCR)
@@ -37,7 +37,7 @@ The system will simulate time passing by. A simulated Environment (SIM) will pro
 \begin{itemize}
   \item \textbf{Time passing}  
 	
-	- Actors: Time, Time Affected Entity\footnote{from now on named TAE}
+	- Actors: Time, Time Affected Entity\footnote{formerly TAE}
 
 	- Time will tick and every affected entity is informed about the current simulated universal time
 
@@ -45,7 +45,9 @@ The system will simulate time passing by. A simulated Environment (SIM) will pro
 
 	- Actors: Simulated Environment, Entities
 
-	- As a time affected entity, Simulated Environment will update its status and the status of its resources and regulate access to them. Moreover it will also trigger both scheduled and random events.
+	- As a time affected entity, Simulated Environment will update its
+status and the status of its simulated resources(SR) and regulate access to
+them. Moreover it will also trigger both scheduled and random events.
 
   \item \textbf{Resources}
 
