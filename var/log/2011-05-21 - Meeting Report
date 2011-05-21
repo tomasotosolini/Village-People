@@ -1,16 +1,20 @@
-Web meeting - 05 May 2011
+Web meeting - 21 May 2011
 --------------------------------------------------------------------------------
 
  Results
 ---------
 Online modifications to documenatation
+Decision to switch to git-hub
 
  Homework
 ----------
-Michele: use case refinement and UML drafs writing
-
 Tomaso: installation of Glassfish, Hibernate, Netbeans 6.9. Implement a hello
-works JSEE app with database interaction.
+works JSEE app with database interaction, already decided in web meeting on 05
+May 2011
+Commit repo to git-hub
+
+
+Michele: initialize netbeans project
 
  Next Scheduled Meeting
 ------------------------
