@@ -1,6 +1,6 @@
 \subsection{High level project goals} 
-The system will simulate life in a town. It will simulate people living in a
-town and services they interact with in everyday life. 
+The system will simulate life in a town. It will simulate people living in and
+services they interact with in everyday life. 
 To achieve this goal the system will simulate time passing by and a Simulated
 Environment (SIM) to provide the entities with access to resources, and to
 schedule events in both predictable and random way.
@@ -13,9 +13,11 @@ In the passive interaction the entity will be affected by a simulated
 environment decision (for example an entity destruction action).
 Simulated Entities will interact between themselves independently from the
 Simulated Environment. The interaction will be initiated by the Communication
-Coordinator which decides who will be part of it and its purpose. The
+Coordinator which decides who will be part of it and its role. The
 interaction will then continue independently from the Communication Coordinator
-and the outcome will only depend on its participants. 
+and the outcome will only depend on its participants. The interaction's
+termination can be due to logic defined into the interaction itself or can be
+due to external actions of other System Entities.
 
 \subsection{Core Resources} 
 \begin{enumerate}
@@ -68,8 +70,8 @@ simulated universal time.
 	- Actors: Simulated Environment, Entities
 
 	- As a time affected entity, Simulated Environment will update its
-status and the status of its simulated resources(SR) and regulate access to
-them. Moreover it will also trigger both scheduled and random events.
+status and the status of its Simulated Resources (formerly SR) and regulate
+access to them. Moreover it will also trigger both scheduled and random events.
 
   \item \textbf{Resource Usage}
 
