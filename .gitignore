@@ -1,0 +1,41 @@
+/code/VillagePeople/dist/
+/code/VillagePeople/build/
+/code/VillagePeople/VillagePeople-ejb/dist/
+/code/VillagePeople/VillagePeople-ejb/build/
+/code/VillagePeople/VillagePeople-war/build/
+/code/VillagePeople/VillagePeople-war/dist/
+/code/VillagePeople-lib/build/
+/code/VillagePeople-lib/dist/
+/code/VillagePeople/VillagePeople-war/nbproject/private/
+/code/VillagePeople-lib/nbproject/private/
+/code/VillagePeople/VillagePeople-ejb/nbproject/private/
+/code/VillagePeople/nbproject/private/
+
+# michele
+# Exclding more Netbeans config info
+/code/VillagePeople/VillagePeople-ejb/nbproject/genfiles.properties
+/code/VillagePeople/VillagePeople-ejb/nbproject/project.properties
+/code/VillagePeople/VillagePeople-ejb/nbproject/project.xml
+/code/VillagePeople/VillagePeople-war/nbproject/project.properties
+/code/VillagePeople/nbproject/project.properties
+
+# from http://help.github.com/git-ignore/
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
