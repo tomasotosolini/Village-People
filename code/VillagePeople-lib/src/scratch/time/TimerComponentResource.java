@@ -10,6 +10,9 @@ import java.lang.Math;
 /**
  *
  * @author tomaso
+ * This class acts as a mediator between system timer and time affected entities.
+ * System time ticks a regular time intervals, while simulated time allows simulated
+ * time to change at different (faster) speed.
  */
 public class TimerComponentResource
 
@@ -55,6 +58,7 @@ public class TimerComponentResource
     public void setFactor(Double factor) { this.factor = factor; }
     
     public void receiveSystemTick() {
+        if (absTime == null) return;
         absTime.setTime((int) (absTime.getTime() + factor * TIME_QUANTUM));
         this.notifyObservers(absTime);
     }
